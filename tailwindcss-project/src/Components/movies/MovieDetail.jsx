@@ -67,11 +67,11 @@ const MovieDetail=()=> {
   </div>
   
   {/* Circle representing the actual value */}
-  <div className="size-25 radial-progress text-success-content border-primary border-3 absolute top-0 left-0"
+  <div className="size-25 radial-progress text-success-content border-primary border-4 absolute top-0 left-0  scale-x-[-1]"
        style={{ "--value": `${(movieDetail.vote_average / 10) * 100}` }}
        aria-valuenow={`${(movieDetail.vote_average / 10) * 100}`}
        role="progressbar">
-    <p className='sm:text-lg'>{((movieDetail.vote_average / 10) * 100).toFixed(2)}%</p>
+    <p className='sm:text-lg font-bold scale-x-[-1]'>{((movieDetail.vote_average / 10) * 100).toFixed(2)}%</p>
   </div>
 </div>
             <p className='text-1xl sm:text-2xl'>User Score</p>
