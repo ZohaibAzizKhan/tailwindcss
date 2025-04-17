@@ -43,7 +43,7 @@ const Home = () => {
   return (
      <>
      {
-      currentSlide.image?(<div className="w-full min-h-screen relative overflow-hidden">
+      currentSlide.title?(<div className="w-full min-h-screen relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-pulse duration-500 ease-in"
           style={{ backgroundImage: `url(${currentSlide.image})` }}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router';
+import Loader from '../Loader';
 
 export default function ShowDetail() {
   const {showID}=useParams();
@@ -25,7 +26,10 @@ export default function ShowDetail() {
    const backgroundImageUrl=`https://image.tmdb.org/t/p/original${showDetail.backdrop_path}`
      const imageUrl=`https://image.tmdb.org/t/p/w500${showDetail.poster_path}`;
   return (
-    <div className="w-full ">
+    <>
+    {
+      showDetail.original_name?(
+        <div className="w-full ">
         <div
           className="w-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] bg-cover bg-center bg-no-repeat relative text-1xl py-0  px-0 sm:py-10 sm:px-10 text-white md:text-2xl"
           style={{ backgroundImage: `url(${backgroundImageUrl})` }}
@@ -53,7 +57,7 @@ export default function ShowDetail() {
             </div>
             <div className='flex flex-row gap-3 items-center'>
             <div className="relative">
-  {/* Full circle representing 100% */}
+
   <div className="size-25 radial-progress bg-primary text-primary-content border-primary border-4" 
        style={{ "--value": 100 }} 
        aria-valuenow={100} 
@@ -103,5 +107,8 @@ export default function ShowDetail() {
           </div>
         </div>
       </div>
+      ):<Loader/>
+    }
+    </>
   )
 }

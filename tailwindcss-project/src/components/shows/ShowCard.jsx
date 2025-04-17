@@ -9,7 +9,7 @@ const ShowCard=({show})=>{
   return(
 <div className="max-w-1xl max-h-lg flex flex-col bg-white rounded-lg shadow-sm  dark:bg-gray-800 relative hover:scale-105 transition-transform duration-300 hover:cursor-pointer" onClick={()=>handleShowDetail()}>
         <img className="rounded-t-lg object-cover aspect-square" src={imageUrl} alt="" />
-    <div className=" flex flex-row justify-evenly items-baseline-last py-3">
+    <div className=" flex flex-row justify-evenly items-baseline py-3">
         <div className="inline-flex flex-col">
         <a>
             <h5 className="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">{show.name}</h5>

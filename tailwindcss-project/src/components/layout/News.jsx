@@ -21,19 +21,23 @@ const News = () => {
     <div className="w-full">
       <h1 className="text-5xl text-center pt-5 font-bold underline">News</h1>
 
-      <div className="flex justify-center gap-4 py-8">
-        {["day", "week"].map((range) => (
-          <button
-            key={range}
-            onClick={() => setTimeWindow(range)}
-            className={`px-4 py-2 text-xl font-semibold rounded-full border 
-              ${timeWindow === range ? "bg-blue-600 text-white" : "bg-gray-200 text-black"}
-            `}
-          >
-            {range === "day" ? "Today" : "This Week"}
-          </button>
-        ))}
-      </div>
+<div className="flex justify-center items-center py-8 gap-4">
+  <label className="inline-flex items-center cursor-pointer">
+    <input
+      type="checkbox"
+      className="sr-only peer"
+      checked={timeWindow === "week"}
+      onChange={(e) => setTimeWindow(e.target.checked ? "week" : "day")}
+    />
+    
+    <div className="relative w-14 h-8 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600"></div>
+
+    <span className="ms-3 text-sm text-black font-bold">
+      {timeWindow === "day" ? "Today" : "Week"}
+    </span>
+  </label>
+</div>
+
       <div className="flex flex-col justify-center items-center pt-10">
          <div className="flex flex-row text-4xl gap-3 font-extrabold text-center">
          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-9 text-red-500">
