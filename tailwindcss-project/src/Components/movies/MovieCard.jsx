@@ -6,7 +6,6 @@ const MovieCard=({movie})=>{
     const handleMovieDetail=()=>{
        navigate(`/movies/${movie.id}`)
     }
-    console.log(movie)
   return(
 <div className="max-w-1xl max-h-lg flex flex-col bg-white rounded-lg  dark:bg-gray-800 relative hover:scale-105 tranansform duration-300 hover:cursor-pointer" onClick={()=>handleMovieDetail()}>
         <img className="rounded-t-lg object-cover aspect-square" src={imageUrl} alt="" />

@@ -56,7 +56,7 @@ const Home = () => {
     TV shows and more
   </h1>
   <div className="w-full pl-10 pr-10">
-  <button type="button" class="flex justify-center items-center dark:bg-gray-400/30 w-full text-2xl rounded-2xl mt-7 py-1 hover:dark:bg-gray-500 hover:text-white hover:font-bold hover:cursor-pointer"
+  <button type="button" className="flex justify-center items-center dark:bg-gray-400/30 w-full text-2xl rounded-2xl mt-7 py-1 hover:dark:bg-gray-500 hover:text-white hover:font-bold hover:cursor-pointer"
   onClick={()=>handleNavigation()}
   >
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10">
@@ -67,15 +67,15 @@ WATCH NEWS</button>
   </div>
 </div>
 
-<div class="relative max-w-sm border border-gray-200 rounded-lg shadow-sm dark:bg-gray-600/30 dark:border-gray-700 bg-white text-white">
+<div className="relative max-w-sm border border-gray-200 rounded-lg shadow-sm dark:bg-gray-600/30 dark:border-gray-700 bg-white text-white">
     <a href="#">
-        <img class="rounded-t-lg aspect-9/10" src={currentSlide.image} alt="" />
+        <img className="rounded-t-lg aspect-9/10" src={currentSlide.image} alt="" />
     </a>
-    <div class="p-5">
+    <div className="p-5">
         <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{currentSlide.title}</h5>
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{currentSlide.title}</h5>
         </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-white">{currentSlide.subtitle}</p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-white">{currentSlide.subtitle}</p>
         </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import ContextAPI from './ContextAPI';
 
 const Pagination = () => {
@@ -52,9 +52,33 @@ const Pagination = () => {
       setPage(pageNumber);
     }
   };
-
+  const [show,setShow]=useState(true)
+ const handleInputShow=()=>{
+  setShow(!show);
+ }
+ const inputPage=useRef();
   return (
+    <>
+    
     <nav aria-label="Page navigation example">
+      <div className='relative  w-full z-44'>
+      <input type="number" id="first_name" class={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-2 ${show?'hidden':''}`} placeholder="Enter Page number..."
+       ref={inputPage}
+       onKeyDown={(e) => {
+        if (e.key === 'Enter') {
+          const value = Number(inputPage.current.value);
+          if (!isNaN(value) && value >= 1 && value <= totalPages) {
+            setPage(value);
+            setShow(true);
+            inputPage.current.value="";
+          } else{
+            alert('Please enter Numbers between 1 and 500');
+            inputPage.current.value="";
+          }
+        }
+      }}
+      />
+        </div>
       <ul className="inline-flex gap-1 -space-x-px text-base h-10">
         <li>
           <button
@@ -71,7 +95,10 @@ const Pagination = () => {
               <li key={index}>
                 {typeof pageNumber === 'number' ? (
                   <button
-                    onClick={() => handlePageClick(pageNumber)}
+                    onClick={() => {
+                      handlePageClick(pageNumber)
+                      handleInputShow()
+                    }}
                     className={`flex items-center justify-center px-4 h-10 leading-tight hover:bg-gray-100 hover:text-gray-700  dark:hover:text-white ${
                       page === pageNumber ? 'dark:bg-blue-200 text-black font-bold hover:bg-gray-400 hover:text-black hover:font-bold':'dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700  text-gray-500 bg-white border border-gray-300'
                     }`}
@@ -98,6 +125,7 @@ const Pagination = () => {
         </li>
       </ul>
     </nav>
+    </>
   );
 };
 

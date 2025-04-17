@@ -1,31 +1,16 @@
 import { useContext, useEffect, useState } from 'react';
 import logo from '../assets/images/Logo.png';
-import {Link, NavLink } from 'react-router-dom';
+import {Link, NavLink, useNavigate } from 'react-router-dom';
 import ContextAPI from './ContextAPI';
 
 const Header = () => {
+  const navigation=useNavigate();
   const {setPage}=useContext(ContextAPI);
 const [isOpen, setIsOpen] = useState(false);
 const toggleMenu = () => { 
   setIsOpen(!isOpen);
   setPage(1);
  }
-//  const [position, setPosition] = useState(window.pageYOffset)
-//     const [visible, setVisible] = useState(true) 
-//     useEffect(()=> {
-//         const handleScroll = () => {
-//            let moving = window.pageYOffset
-           
-//            setVisible(position > moving);
-//            setPosition(moving)
-//         };
-//         window.addEventListener("scroll", handleScroll);
-//         return(() => {
-//            window.removeEventListener("scroll", handleScroll);
-//         })
-//     })
-
-//   const cls = visible ? "visible" : "hidden";
   return (
     <nav className={`flex flex-row z-10 w-full p-4 dark:bg-black/90 text-white sm:justify-around justify-between fixed top-0 left-0 right-0`}>
       <button className='border border-amber-50 rounded-b-sm sm:hidden cursor-pointer' onClick={()=>toggleMenu()}>
@@ -33,7 +18,7 @@ const toggleMenu = () => {
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
 </button>
-        <div className='flex flex-row items-center gap-1'>
+        <div className='flex flex-row items-center gap-1 hover:cursor-pointer' onClick={()=>navigation('/')}>
           <img src={logo} className="h-8 me-3" alt="FlowBite Logo" />
           <div className='font-2xl font-bold'>Movies</div>
         </div>

@@ -16,12 +16,10 @@ const MovieDetail=()=> {
           fetch(url,options).then(res=>res.json())
           .then(json=>
           {
-            console.log(json)
             setMovieDetail(json)
           }
           )
    },[])
-   console.log(movieDetail.backdrop_path)
      const backgroundImageUrl=`https://image.tmdb.org/t/p/original${movieDetail.backdrop_path}`
      const imageUrl=`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`;
    return(
