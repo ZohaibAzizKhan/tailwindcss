@@ -1,15 +1,14 @@
 import './App.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
-import Movies from './Components/movies/Movies'
-import Home from './Components/Home'
-import Shows from './Components/shows/Shows'
-import Navigate from './navigate'
-import News from './Components/News'
-import ContextAPI from './Components/ContextAPI'
 import { useState } from 'react'
-import MovieDetail from './Components/movies/MovieDetail'
-import ShowDetail from './Components/shows/ShowDetail'
-
+import ContextAPI from '@/components/contextAPI/ContextAPI';
+import Container from '@/Container';
+import Home from '@/components/layout/Home'
+import News from '@/components/layout/News'
+import Movies from '@/components/movies/Movies'
+import Shows from '@/components/shows/Shows'
+import MovieDetail from '@/components/movies/MovieDetail'
+import ShowDetail from '@/components/shows/ShowDetail';
 function App() {
       const [movies, setMovies] = useState([]);
       const [totalPages,setTotalPages] = useState();
@@ -68,7 +67,7 @@ function App() {
      }}>
      <BrowserRouter>
      <Routes>
-      <Route path='/' element={<Navigate/>}>
+      <Route path='/' element={<Container/>}>
       <Route index element={<Home/>}></Route>
       <Route path='/news' element={<News/>}></Route>
       <Route path='/movies' element={<Movies/>}></Route>

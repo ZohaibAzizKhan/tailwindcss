@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import Pagination from '../Pagination'
-import ShowCard from "./ShowCard";
-import Loader from "../Loader";
-import ContextAPI from "../ContextAPI";
+import Pagination from '@/components/Pagination'
+import ShowCard from "@/components/shows/ShowCard";
+import Loader from "@/components/Loader";
+import ContextAPI from "@/components/contextAPI/ContextAPI";
 
 const Shows=()=>{
   const {fetchShowData,shows,page}

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import logo from '../assets/images/Logo.png';
+import Logo from '@/assets/images/Logo.png';
 import {Link, NavLink, useNavigate } from 'react-router-dom';
-import ContextAPI from './ContextAPI';
+import ContextAPI from '@/components/contextAPI/ContextAPI';
 
 const Header = () => {
   const navigation=useNavigate();
@@ -19,7 +19,7 @@ const toggleMenu = () => {
         </svg>
 </button>
         <div className='flex flex-row items-center gap-1 hover:cursor-pointer' onClick={()=>navigation('/')}>
-          <img src={logo} className="h-8 me-3" alt="FlowBite Logo" />
+          <img src={Logo} className="h-8 me-3" alt="FlowBite Logo" />
           <div className='font-2xl font-bold'>Movies</div>
         </div>
         <div className='hidden sm:flex flex-row items-center gap-3'>

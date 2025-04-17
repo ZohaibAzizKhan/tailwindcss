@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
-import ContextAPI from './ContextAPI';
+import ContextAPI from '@/components/contextAPI/ContextAPI';
 
 const Pagination = () => {
   const { handleNextPage, handlePreviousPage, page, setPage, totalPages } = useContext(ContextAPI);

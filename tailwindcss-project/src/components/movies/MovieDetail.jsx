@@ -24,7 +24,8 @@ const MovieDetail=()=> {
      const imageUrl=`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`;
    return(
     <>
-    <div className="w-full">
+    {
+      movieDetail.original_title?(<div className="w-full">
         <div
           className="w-full  min-h-[400px] sm:min-h-[500px] md:min-h-[600px] bg-cover bg-center bg-no-repeat relative text-1xl px-0 sm:px-10 py-0 sm:py-10 text-white md:text-2xl"
           style={{ backgroundImage: `url(${backgroundImageUrl})` }}
@@ -32,6 +33,7 @@ const MovieDetail=()=> {
     
           <div className="absolute inset-0 bg-black/70"></div>
           <div className="relative w-full flex flex-col sm:flex-row items-center sm:items-start justify-center  p-4 sm:p-8 gap-4">
+            
             <img
               src={imageUrl}
               alt=""
@@ -100,7 +102,8 @@ const MovieDetail=()=> {
             </div>
           </div>
         </div>
-      </div>
+      </div>):<Loader/>
+    }
     </>
    )
 }
