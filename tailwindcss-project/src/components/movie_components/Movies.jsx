@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import MovieCard from "@/components/movies/MovieCard";
+import MovieCard from "@/components/movie_components/MovieCard";
 import Pagination from "@/components/layout/Pagination";
 import Loader from "@/components/layout/Loader";
 import ContextAPI from "@/components/contextAPI/ContextAPI";

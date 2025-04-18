@@ -5,10 +5,10 @@ import ContextAPI from '@/components/contextAPI/ContextAPI';
 import Container from '@/components/layout/Container';
 import Home from '@/components/layout/Home'
 import News from '@/components/layout/News'
-import Movies from '@/components/movies/Movies'
-import Shows from '@/components/shows/Shows'
-import MovieDetail from '@/components/movies/MovieDetail'
-import ShowDetail from '@/components/shows/ShowDetail';
+import Movies from '@/components/movie_components/Movies'
+import Shows from '@/components/tv_show_components/Shows'
+import MovieDetail from '@/components/movie_components/MovieDetail'
+import ShowDetail from '@/components/tv_show_components/ShowDetail';
 function App() {
       const [movies, setMovies] = useState([]);
       const [totalPages,setTotalPages] = useState();

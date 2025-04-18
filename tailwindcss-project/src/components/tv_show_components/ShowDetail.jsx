@@ -23,7 +23,7 @@ export default function ShowDetail() {
   .catch(err => console.error(err));
    },[]);
 
-   const backgroundImageUrl=`https://image.tmdb.org/t/p/original${showDetail.backdrop_path}`
+   const backgroundImageUrl=`https://image.tmdb.org/t/p/original${showDetail.backdrop_path}`;
      const imageUrl=`https://image.tmdb.org/t/p/w500${showDetail.poster_path}`;
   return (
     <>
@@ -32,7 +32,7 @@ export default function ShowDetail() {
         <div className="w-full ">
         <div
           className="w-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] bg-cover bg-center bg-no-repeat relative text-1xl py-0  px-0 sm:py-10 sm:px-10 text-white md:text-2xl"
-          style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+          style={{ backgroundImage: `url(${backgroundImageUrl})`,backgroundSize:'cover' }}
         >
     
           <div className="absolute inset-0 bg-black/70"></div>

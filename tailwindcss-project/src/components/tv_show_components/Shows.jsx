@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import Pagination from '@/components/layout/Pagination'
-import ShowCard from "@/components/shows/ShowCard";
+import ShowCard from "@/components/tv_show_components/ShowCard";
 import Loader from "@/components/layout/Loader";
 import ContextAPI from "@/components/contextAPI/ContextAPI";
 

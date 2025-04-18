@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import MovieCard from "@/components/movies/MovieCard";
+import MovieCard from "@/components/movie_components/MovieCard";
 import ContextAPI from "@/components/contextAPI/ContextAPI";
-import ShowCard from "@/components/shows/ShowCard";
+import ShowCard from "@/components/tv_show_components/ShowCard";
 import Loader from "@/components/layout/Loader";
 
 const News = () => {
