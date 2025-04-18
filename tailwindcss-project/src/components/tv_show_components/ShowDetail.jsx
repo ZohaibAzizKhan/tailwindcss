@@ -4,6 +4,7 @@ import Loader from '@/components/layout/Loader';
 
 export default function ShowDetail() {
   const {showID}=useParams();
+  const navigate=useNavigate()
   const [showDetail,setShowDetail]=useState([]);
   const url=`https://api.themoviedb.org/3/tv/${showID}?language=en-US`;
   const options = {
@@ -31,12 +32,21 @@ export default function ShowDetail() {
       showDetail.original_name?(
         <div className="w-full ">
         <div
-          className="w-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px] bg-cover bg-center bg-no-repeat relative text-1xl py-0  px-0 sm:py-10 sm:px-10 text-white md:text-2xl"
+          className="w-full min-h-[400px] sm:min-h-[500px] md:min-h-[1050px]
+          xl:min-h-[600px] bg-cover bg-center bg-no-repeat relative text-1xl py-0  px-0 sm:py-10 sm:px-10 text-white md:text-2xl"
           style={{ backgroundImage: `url(${backgroundImageUrl})`,backgroundSize:'cover' }}
         >
     
           <div className="absolute inset-0 bg-black/70"></div>
-          <div className="relative w-full flex flex-col sm:flex-row items-center sm:items-start justify-center  p-4 sm:p-8 gap-4">
+          <div className='relative flex flex-col'>
+          <div>
+          <button type="button" class="hover:cursor-pointer bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=>navigate(-1)}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-white font-bold">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+</svg>
+</button>
+          </div>
+            <div className="relative w-full flex flex-col lg:flex-row items-center lg:items-start justify-center  p-4 sm:p-8 gap-4">
             <img
               src={imageUrl}
               alt=""
@@ -104,6 +114,7 @@ export default function ShowDetail() {
               }
             </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

@@ -46,7 +46,7 @@ const Home = () => {
       currentSlide.title?(<div className="w-full min-h-screen relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-pulse duration-500 ease-in"
-          style={{ backgroundImage: `url(${currentSlide.image})` }}
+          style={{ backgroundImage: `url(${currentSlide.image})`,backgroundSize:'cover' }}
         >
           <div className="absolute inset-0 bg-black/60" /></div>
         <div className="w-full min-h-screen justify-center items-center flex flex-col lg:flex-row gap-20 p-4 ">

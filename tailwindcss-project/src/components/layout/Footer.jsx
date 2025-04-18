@@ -11,7 +11,7 @@ const Footer=()=>{
                   <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Movies</span>
               </div>
           </div>
-          <div className="grid grid-cols-2 justify-between gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 justify-between items-baseline-last gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"></h2>
                   <ul className="text-gray-500 grid grid-cols-1 sm:grid-cols-2 dark:text-gray-400 font-medium">
@@ -31,7 +31,7 @@ const Footer=()=>{
               </div>
               <div>
                   <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                  <ul className="text-gray-500 grid grid-cols-1 sm:grid-cols-2 dark:text-gray-400 font-medium">
+                  <ul className="text-gray-500 grid grid-cols-1 dark:text-gray-400 font-medium">
                       <li className="mb-4">
                           <a href="#" className="hover:underline">Privacy Policy</a>
                       </li>
