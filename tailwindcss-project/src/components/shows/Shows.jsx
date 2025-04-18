@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import Pagination from '@/components/Pagination'
+import Pagination from '@/components/layout/Pagination'
 import ShowCard from "@/components/shows/ShowCard";
-import Loader from "@/components/Loader";
+import Loader from "@/components/layout/Loader";
 import ContextAPI from "@/components/contextAPI/ContextAPI";
 
 const Shows=()=>{

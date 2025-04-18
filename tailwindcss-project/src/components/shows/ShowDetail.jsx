@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router';
-import Loader from '../Loader';
+import Loader from '@/components/layout/Loader';
 
 export default function ShowDetail() {
   const {showID}=useParams();

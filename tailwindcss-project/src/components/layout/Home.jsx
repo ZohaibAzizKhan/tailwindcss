@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import ContextAPI from "@/components/contextAPI/ContextAPI";
 import { useNavigate } from "react-router";
-import Loader from "@/components/Loader";
+import Loader from "@/components/layout/Loader";
 
 const Home = () => {
   const url = 'https://api.themoviedb.org/3/trending/movie/week?language=en-US';

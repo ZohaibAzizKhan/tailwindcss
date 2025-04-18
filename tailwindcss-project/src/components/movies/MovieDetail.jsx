@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import Loader from '../Loader';
+import Loader from '@/components/layout/Loader';
 const MovieDetail=()=> {
   const {movieID}=useParams();
   const url=`https://api.themoviedb.org/3/movie/${movieID}?language=en-US`;
