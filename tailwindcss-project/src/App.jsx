@@ -10,10 +10,10 @@ import Shows from '@/components/tv_show_components/Shows'
 import MovieDetail from '@/components/movie_components/MovieDetail'
 import ShowDetail from '@/components/tv_show_components/ShowDetail';
 function App() {
-      const [movies, setMovies] = useState([]);
-      const [totalPages,setTotalPages] = useState();
-      const [page, setPage] = useState(1);
-      const [shows, setShows] = useState([]);
+      const [movies, setMovies] = useState([]);//state used to keep track of movies data
+      const [totalPages,setTotalPages] = useState();//to keep track of total pages
+      const [page, setPage] = useState(1);//state to keep track of page
+      const [shows, setShows] = useState([]);//state to keep track of shows data 
       const options = {
         method: 'GET',
         headers: {
@@ -21,6 +21,7 @@ function App() {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5M2U5YmZkMzlkODY5ZTg0MDc0ODhhNGI2ZWY3ZjRlMCIsIm5iZiI6MTc0NDI3MDQ0OC43Mjk5OTk4LCJzdWIiOiI2N2Y3NzQ3MDZjMzU4M2M5NzU5YTA3NjciLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Ssv31mjq2LQgUbOtpZATbQhuGlTTQrgi2Gr0jIHAVAQ'
         }
       };
+      //this funtion is used to fetch movies data and is used by child components to fetch show data according to their needs and it accept a url
       const fetchMovieData=(url)=>{
         fetch(url, options)
         .then(res => res.json())
@@ -31,6 +32,7 @@ function App() {
         })
         .catch(err => console.error(err));
       }
+      //this funtion is used to fetch tv shows data and is used by child components to fetch show data according to their needs and it accept a url
       const fetchShowData=(url)=>{
         fetch(url, options)
         .then(res => res.json())
@@ -41,18 +43,20 @@ function App() {
         })
         .catch(err => console.error(err));
       }
-
+     //this function handle next page jump if page is greater than equal to 1 and page is less than equal to total pages (which is 500 in this case) then set the state of page to (page+1)
       const handleNextPage=()=>{
           if(page>=1 && page<=totalPages){
           setPage(page+1);
           }
         }
+      //this function handle previous page jump 
         const handlePreviousPage=()=>{
           if(page>=2){
             setPage(page-1)
           }
         }
   return (
+    //contextapi provider
     <>
      <ContextAPI.Provider value={{
       fetchMovieData,
@@ -65,6 +69,7 @@ function App() {
       fetchShowData,
       setPage
      }}>
+      {/* routers */}
      <BrowserRouter>
      <Routes>
       <Route path='/' element={<Container/>}>

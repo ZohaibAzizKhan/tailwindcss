@@ -9,15 +9,14 @@ const Home = () => {
   const navigation=useNavigate();
   const indexRef = useRef(0);
   const [render, setRender] = useState(0); // trigger only 1 render after initial fetch
-
+   //useEffect is used to fetch movies data at initial rendering
   useEffect(() => {
     if (movies.length === 0) {
       fetchMovieData(url);
     } else {
-      setRender((r) => r + 1);
+      setRender((r) => r + 1); 
     }
   }, [movies]);
-
   const slides = movies.slice(0, 10).map((movie) => ({
     image: `https://image.tmdb.org/t/p/original${movie.backdrop_path}`,
     title: movie.title,
@@ -43,6 +42,7 @@ const Home = () => {
   return (
      <>
      {
+      // of the current title data is available then show movie component otherwise show loader untile title for currentSlide object is not available
       currentSlide.title?(<div className="w-full min-h-screen relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-pulse duration-500 ease-in"

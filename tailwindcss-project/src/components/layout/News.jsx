@@ -5,7 +5,7 @@ import ShowCard from "@/components/tv_show_components/ShowCard";
 import Loader from "@/components/layout/Loader";
 
 const News = () => {
-  const [timeWindow, setTimeWindow] = useState("day");
+  const [timeWindow, setTimeWindow] = useState("day");//use to keep track of day or week
   const { fetchMovieData, movies, shows, fetchShowData } = useContext(ContextAPI);
 
   useEffect(() => {

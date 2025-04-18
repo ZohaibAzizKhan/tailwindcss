@@ -4,6 +4,7 @@ import { Outlet } from "react-router";
 
 
 const Container=()=>{
+  //this component ensures the header and footer for all pages that renders using outlet
   return(
    <>
    <Header/>

@@ -2,11 +2,12 @@ import { useContext, useEffect, useState } from 'react';
 import Logo from '@/assets/images/Logo.png';
 import {Link, NavLink, useNavigate } from 'react-router-dom';
 import ContextAPI from '@/components/contextAPI/ContextAPI';
-
+//this component provides navigation within the application
 const Header = () => {
-  const navigation=useNavigate();
-  const {setPage}=useContext(ContextAPI);
-const [isOpen, setIsOpen] = useState(false);
+  const navigation=useNavigate(); //use to handle page jump
+  const {setPage}=useContext(ContextAPI); 
+const [isOpen, setIsOpen] = useState(false); //to keep track of header in small devices
+//this function set the isOpen to true if this fucntion is being called by that button which is hidden in large devices but apeared in small devices
 const toggleMenu = () => { 
   setIsOpen(!isOpen);
   setPage(1);
@@ -28,7 +29,7 @@ const toggleMenu = () => {
           <NavLink to="/news" className='hover:underline hover:decoration-amber-400 p-3'>News</NavLink>
           <NavLink to='/movies' className='hover:underline hover:decoration-amber-400 p-3' onClick={()=>setPage(1)}>Movies</NavLink>
           <NavLink to="/shows" className='hover:underline hover:decoration-amber-400 p-3' onClick={()=>setPage(1)}>TV Shows</NavLink>
-          
+          {/* this portion will be hidden in large devices and appeared in small devices whenever the button declared above is clicked */}
         </div>
         {isOpen && (
           <div className='absolute top-16 left-0 right-0 bg-black text-white  flex flex-col p-3 sm:hidden'>
