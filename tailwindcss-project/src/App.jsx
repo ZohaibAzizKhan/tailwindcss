@@ -1,7 +1,7 @@
 import './App.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import { useState } from 'react'
-import ContextAPI from '@/components/contextAPI/ContextAPI';
+import ContextAPI from '@/contextAPI/ContextAPI';
 import Container from '@/components/layout/Container';
 import Home from '@/components/layout/Home'
 import News from '@/components/layout/News'

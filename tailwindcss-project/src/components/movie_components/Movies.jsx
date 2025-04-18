@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import MovieCard from "@/components/movie_components/MovieCard";
 import Pagination from "@/components/layout/Pagination";
 import Loader from "@/components/layout/Loader";
-import ContextAPI from "@/components/contextAPI/ContextAPI";
+import ContextAPI from "@/contextAPI/ContextAPI";
 const Movies=()=>{
   const {fetchMovieData,movies,totalPages,page}=useContext(ContextAPI);
   const url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${page}`;

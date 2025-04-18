@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import Logo from '@/assets/images/Logo.png';
 import {Link, NavLink, useNavigate } from 'react-router-dom';
-import ContextAPI from '@/components/contextAPI/ContextAPI';
+import ContextAPI from '@/contextAPI/ContextAPI';
 //this component provides navigation within the application
 const Header = () => {
   const navigation=useNavigate(); //use to handle page jump

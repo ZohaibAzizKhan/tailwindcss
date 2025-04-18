@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import ContextAPI from "@/components/contextAPI/ContextAPI";
+import ContextAPI from "@/contextAPI/ContextAPI";
 import { useNavigate } from "react-router";
 import Loader from "@/components/layout/Loader";
 

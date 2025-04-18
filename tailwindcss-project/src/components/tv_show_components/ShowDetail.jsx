@@ -18,7 +18,6 @@ export default function ShowDetail() {
     fetch(url, options)
   .then(res => res.json())
   .then(json => {
-    console.log(json)
     setShowDetail(json)
   })
   .catch(err => console.error(err));
@@ -40,7 +39,7 @@ export default function ShowDetail() {
           <div className="absolute inset-0 bg-black/70"></div>
           <div className='relative flex flex-col'>
           <div>
-          <button type="button" class="hover:cursor-pointer bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=>navigate(-1)}>
+          <button type="button" className="hover:cursor-pointer bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" onClick={()=>navigate(-1)}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-white font-bold">
   <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
 </svg>
