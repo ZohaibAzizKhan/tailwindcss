@@ -96,7 +96,8 @@ const Pagination = () => {
                 />
               ) : (
                 <button
-                  onClick={() => handlePageClick(index)}
+                onClick={()=>setPage(pageNumber)}
+                  onDoubleClick={() => handlePageClick(index)}
                   className={`flex items-center justify-center px-4 h-10 leading-tight hover:bg-gray-100 hover:text-gray-700 dark:hover:text-white ${
                     page === pageNumber
                       ? 'dark:bg-blue-200 text-black font-bold hover:bg-gray-400 hover:text-black hover:font-bold'
